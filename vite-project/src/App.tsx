@@ -83,13 +83,15 @@ function Game() {
     setXIsNext(nextMove % 2 === 0);
   }
 
-  const moves = history.map(({ squares, move }: any) => {
+
+  const moves = history.map((squares:any, move:any) => {
     let description;
     if (move > 0) {
       description = 'Go to move#' + move;
     } else {
       description = 'Go to game start';
     }
+    console.log(move);
     return (
       <li key={move}>
         <button onClick={() => jumpTo(move)}>{description}</button>
